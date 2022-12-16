@@ -1,0 +1,52 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.playground {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  background-image: url("images/Hingergrund/Hintergrund.png");
+  background-size: cover;
+}
+
+.punkte {
+  font-family: Helvetica, sans-serif;
+  font-size: 30px;
+  position: relative;
+  margin-left: 5%;
+}
+
+.player {
+  position: absolute;
+  width: 100px;
+  height: auto;
+}
+
+.enemy1 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url("images/Meteoriten/Meteorit.svg");
+  background-size: cover;
+}
+
+.enemy2 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url("images/lava/lavaghost.svg");
+  background-size: cover;
+}
+
+.food {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url("images/Fleisch/Fleisch.svg");
+  background-size: cover;
+}
