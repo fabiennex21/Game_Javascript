@@ -10,7 +10,7 @@ body {
   position: relative;
   width: inherit;
   height: inherit;
-  background-image: url("images/Hingergrund/Hintergrund.png");
+  background-image: url("images/Hingergrund/Hintergrund.svg");
   background-size: cover;
 }
 

@@ -28,7 +28,7 @@ function steuerung() {
 //   return true;
 // }
 
-function futterErstellen() {
+function objekteErstellen() {
   if (timerObjektErstellen.ready()) {
     let zuefallFutter = Math.random() * 800;
     let foods = document.createElement("div");
@@ -119,8 +119,7 @@ function loop() {
   // if (anleitung()) {
   //   return;
   // }
-  // hindernisErstellen();
-  futterErstellen();
+  objekteErstellen();
   hindernisBewegen();
   futterBewegen();
   scoreHigher();
