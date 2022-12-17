@@ -15,16 +15,17 @@ function steuerung() {
     spieler.style.top = parseInt(spieler.style.top) + 5 + "px";
   }
 }
+// function nameDino() {
+//   let nameDino = prompt("Gib deinem Dino einen Namen.");
+//   return true;
+// }
 
 // function anleitung() {
 //   alert(
 //     "Bewege mit den Pfeiltasten deinen Dino. Sammle das Fleisch ein um Punkte zu gewinnen. Gib acht auf die Meteoriten und das Lava sonst ist Game Over! "
 //   );
-// }
-
-// function hindernisErstellen() {
-//   if (timerObjektErstellen.ready()) {
-//   }
+//   // window.location.reload();
+//   return true;
 // }
 
 function futterErstellen() {
@@ -112,7 +113,12 @@ function kollision() {
 
 function loop() {
   steuerung();
-  // anleitung();
+  // if (nameDino()) {
+  //   return;
+  // }
+  // if (anleitung()) {
+  //   return;
+  // }
   // hindernisErstellen();
   futterErstellen();
   hindernisBewegen();
