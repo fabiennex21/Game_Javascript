@@ -16,11 +16,11 @@ function steuerung() {
   }
 }
 
-function anleitung() {
-  alert(
-    "Bewege mit den Pfeiltasten deinen Dino. Sammle das Fleisch ein um Punkte zu gewinnen. Gib acht auf die Meteoriten und das Lava sonst ist Game Over! "
-  );
-}
+// function anleitung() {
+//   alert(
+//     "Bewege mit den Pfeiltasten deinen Dino. Sammle das Fleisch ein um Punkte zu gewinnen. Gib acht auf die Meteoriten und das Lava sonst ist Game Over! "
+//   );
+// }
 
 // function hindernisErstellen() {
 //   if (timerObjektErstellen.ready()) {
@@ -41,12 +41,12 @@ function futterErstellen() {
     enemies.style.right = "0px";
     enemies.style.top = zuefallEnemies + "px";
     spielfeld.appendChild(enemies);
-    let zuefallEnemies2 = Math.random() * 800;
-    let enemies2 = document.createElement("div");
-    enemies2.classList.add("enemy2");
-    enemies2.style.right = "0px";
-    enemies2.style.top = zuefallEnemies2 + "px";
-    spielfeld.appendChild(enemies2);
+    // let zuefallEnemies2 = Math.random() * 800;
+    // let enemies2 = document.createElement("div");
+    // enemies2.classList.add("enemy2");
+    // enemies2.style.right = "0px";
+    // enemies2.style.top = zuefallEnemies2 + "px";
+    // spielfeld.appendChild(enemies2);
   }
 }
 
@@ -59,13 +59,13 @@ function hindernisBewegen() {
         hindernis.parentNode.removeChild(hindernis);
       }
     }
-    let hindernisse2 = document.querySelectorAll(".enemy2");
-    for (const hindernis2 of hindernisse2) {
-      hindernis2.style.right = parseInt(hindernis2.style.right) + 10 + "px";
-      if (parseInt(hindernis2.style.right) > 1500) {
-        hindernis2.parentNode.removeChild(hindernis2);
-      }
-    }
+    // let hindernisse2 = document.querySelectorAll(".enemy2");
+    // for (const hindernis2 of hindernisse2) {
+    //   hindernis2.style.right = parseInt(hindernis2.style.right) + 10 + "px";
+    //   if (parseInt(hindernis2.style.right) > 1500) {
+    //     hindernis2.parentNode.removeChild(hindernis2);
+    //   }
+    // }
   }
 }
 
@@ -93,12 +93,22 @@ function scoreHigher() {
 
 function kollision() {
   const hindernisse = document.querySelectorAll(".enemy1");
+  const hindernisse2 = document.querySelectorAll(".enemy2");
   if (anyCollision(spieler, hindernisse)) {
-    //alert("Game over! Start again?");
+    // if (anyCollision(spieler, hindernisse || spieler, hindernisse2)) {
+    alert("Game over! Start again?");
     window.location.reload();
-    return;
+    return true;
   }
 }
+// function kollision2() {
+//   const hindernisse2 = document.querySelectorAll(".enemy2");
+//   if (anyCollision(spieler, hindernisse2)) {
+//     //alert("Game over! Start again?");
+//     window.location.reload();
+//     return;
+//   }
+// }
 
 function loop() {
   steuerung();
@@ -108,7 +118,10 @@ function loop() {
   hindernisBewegen();
   futterBewegen();
   scoreHigher();
-  kollision();
+  if (kollision()) {
+    return;
+  }
+  // kollision2();
 
   window.requestAnimationFrame(loop);
 }
